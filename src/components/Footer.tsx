@@ -1,5 +1,6 @@
 import React from 'react';
-import { Code2, Mail, MapPin, Phone, Github, Twitter, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Github, Twitter, Linkedin, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer = () => {
   const footerLinks = {
@@ -43,15 +44,22 @@ const Footer = () => {
         <div className="grid lg:grid-cols-6 gap-8 mb-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <Code2 className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">Golang Ghana</span>
+            <div className="flex items-center space-x-2">
+              <Image
+                src="/go-main-big-gh.png"
+                alt="Golang Ghana Logo"
+                width={36}
+                height={36}
+                className="rounded-sm"
+              />
+
+              <span className="text-xl font-bold text-gray-900 dark:text-white">Golang Ghana</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              A community of programmers, engineers and scientists who are passionate 
+              A community of programmers, engineers and scientists who are passionate
               about Go and its essence to humanity.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
@@ -75,7 +83,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.community.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
@@ -91,7 +99,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
@@ -107,7 +115,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.events.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
@@ -123,7 +131,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
@@ -143,8 +151,8 @@ const Footer = () => {
               Get the latest news, events, and resources delivered to your inbox.
             </p>
             <div className="flex">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Enter your email"
                 className="flex-1 bg-gray-800 border border-gray-700 rounded-l-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
               />
@@ -160,7 +168,7 @@ const Footer = () => {
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             © 2024 Golang Ghana. All rights reserved. Built with ❤️ by the community.
           </div>
-          
+
           {/* Social Links */}
           <div className="flex items-center space-x-4">
             {socialLinks.map((social, index) => (
