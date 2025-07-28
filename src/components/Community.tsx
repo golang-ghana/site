@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Users, MessageCircle, Github, Linkedin, Twitter, Award, TrendingUp, Heart } from 'lucide-react';
+import { Users, MessageCircle, Github, Linkedin, Twitter, Award, TrendingUp, Heart, Phone, ArrowRight } from 'lucide-react';
 
 const Community = () => {
   const stats = [
@@ -61,29 +61,33 @@ const Community = () => {
       name: 'Discord Community',
       description: 'Join our active Discord server for real-time discussions',
       members: '450+ members',
-      color: 'indigo'
+      color: 'indigo',
+      href: 'https://discord.gg/pdWC9fdtZa',
     },
     {
       icon: Github,
       name: 'GitHub Organization',
       description: 'Collaborate on open source projects and code reviews',
       members: '200+ contributors',
-      color: 'gray'
+      color: 'gray',
+      href: 'https://github.com/golang-ghana',
     },
     {
       icon: Linkedin,
       name: 'LinkedIn Group',
       description: 'Professional networking and career opportunities',
       members: '300+ professionals',
-      color: 'blue'
+      color: 'blue',
+      href: 'https://www.linkedin.com/company/golang-ghana/',
     },
     {
-      icon: Twitter,
-      name: 'Twitter Community',
-      description: 'Stay updated with latest news and quick discussions',
-      members: '600+ followers',
-      color: 'sky'
-    }
+      icon: Phone,
+      name: 'WhatsApp Group',
+      description: 'Chat and connect instantly with members',
+      members: '600+ participants',
+      color: 'green',
+      href: 'https://chat.whatsapp.com/Bk6aiPGt0qoAadpPMyG6XI',
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -134,26 +138,40 @@ const Community = () => {
         {/* Community Channels */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {communityChannels.map((channel, index) => (
-            <div
+            <a
               key={index}
-              className="rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group"
-              style={{
-                background: 'var(--color-card)',
-              }}
+              href={channel.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl p-6 hover:shadow-lg transition-all duration-300 group flex flex-col h-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+              style={{ background: 'var(--color-card)' }}
+              aria-label={`Join our ${channel.name}`}
             >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                style={{
-                  background: 'var(--color-primary-light)',
-                  color: 'var(--color-primary)',
-                }}
-              >
-                <channel.icon className="h-6 w-6" />
+              <div className="flex items-center mb-4">
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                  style={{
+                    background: 'var(--color-primary-light)',
+                    color: 'var(--color-primary)',
+                  }}
+                >
+                  <channel.icon className="h-6 w-6" />
+                </div>
+                <span className="flex-1" />
+                <button
+                  tabIndex={-1}
+                  type="button"
+                  aria-label={`Go to ${channel.name}`}
+                  className="ml-2 p-2 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-600 transition-colors cursor-pointer"
+                  onClick={e => { e.preventDefault(); window.open(channel.href, '_blank', 'noopener,noreferrer'); }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>{channel.name}</h3>
               <p className="text-sm mb-3 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>{channel.description}</p>
               <div className="text-xs font-medium" style={{ color: 'var(--color-text-tertiary)' }}>{channel.members}</div>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -212,7 +230,7 @@ const Community = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <button
-              className="px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
+              className="px-8 py-3 cursor-pointer rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
               style={{ background: 'var(--color-card)', color: 'var(--color-primary)' }}
               onClick={e => { e.preventDefault(); document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' }); }}
             >
@@ -220,7 +238,7 @@ const Community = () => {
               Join Community
             </button>
             <button
-              className="border-2 px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+              className="border-2 px-8 py-3 rounded-lg cursor-pointer font-semibold transition-colors duration-200"
               style={{ borderColor: 'var(--color-card)', color: 'var(--color-card)', background: 'transparent' }}
             >
               Learn More

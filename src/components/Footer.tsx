@@ -31,10 +31,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: MessageCircle, href: '#', label: 'Discord' }
+    { icon: Github, href: 'https://github.com/golang-ghana', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/golang-ghana/', label: 'LinkedIn' },
+    { icon: MessageCircle, href: 'https://discord.gg/pdWC9fdtZa', label: 'Discord' },
+    { icon: Phone, href: 'https://chat.whatsapp.com/Bk6aiPGt0qoAadpPMyG6XI', label: 'WhatsApp' }
   ];
 
   return (

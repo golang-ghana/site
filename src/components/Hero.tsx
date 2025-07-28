@@ -30,24 +30,23 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                className="px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
+                className="px-8 py-3 rounded-lg text-white cursor-pointer font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
                 style={{
                   background: 'var(--color-primary)',
-                  color: 'var(--color-card)',
                 }}
               >
                 Join Our Community
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button
-                className="border-2 px-8 py-3 rounded-lg font-semibold transition-all duration-200"
+                className="border-2 px-8 py-3 rounded-lg cursor-pointer font-semibold transition-all duration-200"
                 style={{
                   borderColor: 'var(--color-primary)',
                   color: 'var(--color-primary)',
                   background: 'var(--color-card)',
                 }}
               >
-                View Resources
+                Speak To Us
               </button>
             </div>
 

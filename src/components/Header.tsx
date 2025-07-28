@@ -5,7 +5,11 @@ import { Menu, X, Code2 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import Image from 'next/image';
 
-const Header = () => {
+interface HeaderProps {
+  onSignUpClick: (e: React.MouseEvent) => void;
+}
+
+const Header = ({ onSignUpClick }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -36,7 +40,10 @@ const Header = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <button className="border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200" onClick={e => { e.preventDefault(); document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' }); }}>
+            <button 
+              className="border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200" 
+              onClick={onSignUpClick}
+            >
               Sign Up
             </button>
           </div>
@@ -63,7 +70,10 @@ const Header = () => {
               <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 w-full mb-2">
                 Sign In
               </button>
-              <button className="border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200 w-full" onClick={e => { e.preventDefault(); document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' }); }}>
+              <button 
+                className="border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200 w-full" 
+                onClick={onSignUpClick}
+              >
                 Sign Up
               </button>
             </div>

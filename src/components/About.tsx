@@ -77,7 +77,7 @@ const About = () => {
             </div>
             <div className="text-center md:text-right">
               <button
-                className="px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+                className="px-8 py-3 rounded-lg font-semibold text-white cursor-pointer transition-colors duration-200"
                 style={{ background: 'var(--color-card)', color: 'var(--color-primary)' }}
               >
                 Get Started Today
